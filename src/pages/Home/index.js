@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Image, theme, Col, Row, Typography, Card, Grid } from "antd";
+import { Image, theme, Col, Row, Typography, Card, Grid, Button, Form, Input } from "antd";
 import { LaptopOutlined, CheckOutlined } from '@ant-design/icons';
 import styled from "styled-components";
 import Banner from "../../assets/home.jpg";
@@ -23,13 +23,13 @@ const StyledDiv = styled.div`
     align-items: center;
     width: 100%;
     flex-direction: column;
-    padding-bottom: 24px;
 `;
 
 const Header = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
+    justify-content: center;
+    margin-bottom: 8px;
     margin-top: 8px;
 
     .icon {
@@ -54,6 +54,21 @@ const StyledCard = styled(Card)`
     .ant-card-head {
         border: none;
     }
+`
+
+const StyledOrcDiv = styled.div`
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+
+const StyledForm = styled(Form)`
+    padding-top: 8px;
+    width: 50%;
+    max-width: 400px;
 `
 
 const item = [
@@ -111,10 +126,14 @@ export default function HomePage() {
                 </Col>
             </Row>
 
-            <Row gutter={[16,16]} style={{ padding: isMobile ? 8 : 32 }}>
+            <Row gutter={[16, 16]} style={{ padding: isMobile ? 8 : 32 }}>
                 <Col flex={1} sm={24} xs={24} md={8} lg={8} xl={8} xxl={8}>
-                    <StyledCard title={<Header><LaptopOutlined className="icon" />
-                        <Title level={4} style={{ margin: 0 }}>Consultoria de TI para Empresas</Title></Header>}>
+                    <StyledCard title={
+                        <Header>
+                            <LaptopOutlined className="icon" />
+                            <Text style={{ fontSize: '16px', wordBreak: 'break-word', whiteSpace: 'normal' }}>Consultoria em TI</Text>
+                        </Header>
+                    }>
                         {item.map(item => {
                             return (
                                 <Lista>
@@ -128,8 +147,12 @@ export default function HomePage() {
                     </StyledCard>
                 </Col>
                 <Col flex={1} sm={24} xs={24} md={8} lg={8} xl={8} xxl={8}>
-                    <StyledCard title={<Header><LaptopOutlined className="icon" />
-                        <Title level={4} style={{ margin: 0 }}>Consultoria de TI para Empresas</Title></Header>}>
+                    <StyledCard title={
+                        <Header>
+                            <LaptopOutlined className="icon" />
+                            <Text style={{ fontSize: '16px', wordBreak: 'break-word', whiteSpace: 'normal' }}>Projetos de Redes</Text>
+                        </Header>
+                    }>
                         {item.map(item => {
                             return (
                                 <Lista>
@@ -144,6 +167,35 @@ export default function HomePage() {
                 </Col>
             </Row>
 
+            <Row gutter={[16, 16]} style={{ width: '100%', background: '#ec5353' }}>
+                <Col flex={1}>
+                    <StyledOrcDiv>
+                        <Title level={5} style={{ margin: 0, color: '#fff' }}>Solicite um Orçamento</Title>
+                        <StyledForm>
+                            <Form.Item name="Nome" rules={[{required: true,message: "Por favor insira o nome"}]}>
+                                <Input placeholder="Nome*" />
+                            </Form.Item>
+                            <Form.Item name="email" rules={[{required: true,message: "Por favor insira o e-mail"}]}>
+                                <Input placeholder="E-mail*" />
+                            </Form.Item>
+                            <Form.Item name="empresa" rules={[{required: true,message: "Por favor insira a empresa"}]}>
+                                <Input placeholder="Empresa*" />
+                            </Form.Item>
+                            <Form.Item name="telefone" rules={[{required: true,message: "Por favor insira o telefone"}]}>
+                                <Input placeholder="Telefone com DDD*" />
+                            </Form.Item>
+                            <Form.Item name="description" rules={[{required: true,message: "Por favor insira a descrição"}]}>
+                                <Input.TextArea placeholder="Detalhes da sua solicitação*" />
+                            </Form.Item>
+                            <Form.Item style={{ textAlign: "end" }}>
+                                <Button style={{ background: '#000' }} type="primary" htmlType="submit">
+                                    Enviar
+                                </Button>
+                            </Form.Item>
+                        </StyledForm>
+                    </StyledOrcDiv>
+                </Col>
+            </Row>
 
             {/* <table>
                     <thead>
