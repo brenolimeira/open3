@@ -178,8 +178,10 @@ export default function FooterPage() {
               </StyleContentText>
             </Col>
           </Row>
-          <Row style={{backgroundColor: "#000", display: "flex", justifyContent: "center", padding: 8}}>
-            © Desde de 2024 por BDTech
+          <Row gutter={[24, 24]} style={{backgroundColor: "#000"}}>
+            <Col span={24} flex={1}  width='100%' style={{justifyContent: "center", padding: 8}}>
+              © Desde de 2024 por BDTech
+            </Col>
           </Row>
         </Col>
       </Footer>

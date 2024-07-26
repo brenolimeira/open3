@@ -3,8 +3,7 @@ import { Button, Form, Input, notification, Row, Col, Typography, Space } from "
 import axios from "axios";
 import MapComponent from "../../components/MapComponent";
 import styled from "styled-components";
-import { FacebookFilled, GoogleOutlined, InstagramFilled, LinkedinFilled, TwitterSquareFilled, YoutubeFilled } from "@ant-design/icons";
-import StarRating from "../../components/StarRating";
+import { FacebookFilled, InstagramFilled, LinkedinFilled, TwitterSquareFilled, YoutubeFilled } from "@ant-design/icons";
 
 const { Text, Title } = Typography;
 
@@ -56,25 +55,25 @@ const ContactForm = () => {
     };
 
     return (
-        <Col style={{ padding: 32 }}>
+        <>
             <Row gutter={[16, 16]}>
-                <Col sm={24} xs={24} md={12} lg={12} xl={12}>
+                <Col sm={24} xs={24} md={12} lg={12} xl={12} flex={1}style={{width: '100%'}}>
                     <FormContainer>
                         <StyledForm form={form} layout="vertical" onFinish={handleSubmit}>
                             <Form.Item>
                                 <Text>Preencha o formulário abaixo e encaminhe sua solicitação.</Text>
                             </Form.Item>
-                            <Form.Item name="name" rules={[{ required: true, message: "Por favor, insira seu nome."}]}>
-                                <Input placeholder="Nome*"/>
+                            <Form.Item name="name" rules={[{ required: true, message: "Por favor, insira seu nome." }]}>
+                                <Input placeholder="Nome*" />
                             </Form.Item>
                             <Form.Item name="email" rules={[{ required: true, message: "Por favor, insira seu e-mail." }]}>
-                                <Input placeholder="E-mail*"/>
+                                <Input placeholder="E-mail*" />
                             </Form.Item>
                             <Form.Item name="phone" rules={[{ required: true, message: "Por favor, insira seu número de telefone." }]}>
-                                <Input placeholder="Telefone com DDD*"/>
+                                <Input placeholder="Telefone com DDD*" />
                             </Form.Item>
-                            <Form.Item name="message" rules={[{  required: true, message: "Por favor, insira os detalhes sobre sua solicitação." }]}>
-                                <Input.TextArea placeholder="Detalhes sobre sua solicitação*"/>
+                            <Form.Item name="message" rules={[{ required: true, message: "Por favor, insira os detalhes sobre sua solicitação." }]}>
+                                <Input.TextArea placeholder="Detalhes sobre sua solicitação*" />
                             </Form.Item>
                             <Form.Item style={{ textAlign: "end" }}>
                                 <Button type="primary" htmlType="submit" loading={loading}>
@@ -84,7 +83,7 @@ const ContactForm = () => {
                         </StyledForm>
                     </FormContainer>
                 </Col>
-                <Col sm={24} xs={24} md={12} lg={12} xl={12}>
+                <Col sm={24} xs={24} md={12} lg={12} xl={12} flex={1} style={{width: '100%'}}>
                     <FormContainer>
                         <StyledForm>
                             <Space direction="vertical" size="middle">
@@ -115,25 +114,47 @@ const ContactForm = () => {
                                 </Space>
                                 <Text>
                                     Para envio de
-                                    <Text strong> currículo </Text>,
-                                    <a href="#">click aqui</a>
+                                    <Text strong> currículo </Text>,<a href="#">click aqui</a>
                                 </Text>
                                 <Text>
                                     Para cadastro de
-                                    <Text strong> parceiro </Text>,
-                                    <a href="#">click aqui</a>
+                                    <Text strong> parceiro </Text>,<a href="#">click aqui</a>
                                 </Text>
                             </Space>
                         </StyledForm>
                     </FormContainer>
                 </Col>
             </Row>
-            <Row>
-                <Col span={24} style={{ display: "flex", justifyContent: "center" }}>
+            <Row style={{ paddingBottom: 24}}>
+                <Col span={24} flex={1} style={{ display: "flex", justifyContent: "center", width: '100%' }}>
                     <MapComponent />
                 </Col>
             </Row>
-        </Col>
+            <Row gutter={[24,24]} align="middle" style={{ backgroundColor: "#FF0000", padding: 32}}>
+                <Col span={12} style={{textAlign: 'end', width: "100%"}} >
+                    <Title level={3} style={{ color: "#fff" }}>
+                        Receba nossa newsletter
+                    </Title>
+                </Col>
+                <Col span={12} style={{ gap: '4px'}}>
+                    <Form form={form}>
+                        <Space size={"small"} align="center">
+                            <Form.Item name="name" rules={[{ required: true, message: "Por favor, insira seu nome." }]} style={{all:'unset'}}>
+                                <Input placeholder="Nome*" />
+                            </Form.Item>
+                            <Form.Item name="email" rules={[{ required: true, message: "Por favor, insira seu email." }]} style={{all:'unset'}}>
+                                <Input placeholder="E-mail" />
+                            </Form.Item>
+                            <Form.Item style={{all:'unset'}}>
+                                <Button loading={loading} style={{background: '#000', color: '#fff'}}>
+                                    Enviar
+                                </Button>
+                            </Form.Item>
+                        </Space>
+                    </Form>
+                </Col>
+            </Row>
+        </>
     );
 };
 
