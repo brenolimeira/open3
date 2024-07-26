@@ -5,6 +5,7 @@ import Routes from './routes';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { HeaderPage } from "./layout/HeaderPage";
 import { theme } from './theme';
+import FooterPage from "./layout/FooterPage";
 
 const ThemedLayout = () => {
   const { theme } = useTheme();
@@ -18,6 +19,7 @@ const ThemedLayout = () => {
             <Layout className="layout" style={{ background: theme === 'light' ? '#fff' : '#333' }}>
               <Routes />
             </Layout>
+            <FooterPage />
           </Layout>
         </div>
       </ConfigProvider>
