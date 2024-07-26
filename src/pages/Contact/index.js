@@ -3,36 +3,12 @@ import { Button, Form, Input, notification, Row, Col, Typography, Space, Image, 
 import axios from "axios";
 import MapComponent from "../../components/MapComponent";
 import styled from "styled-components";
+import BannerComponent from "../../components/BannerComponent";
 import Banner from "../../assets/home_ajustada.jpg";
 import { FacebookFilled, InstagramFilled, LinkedinFilled, TwitterSquareFilled, YoutubeFilled } from "@ant-design/icons";
 
 const { Text, Title } = Typography;
 const {useBreakpoint} = Grid;
-
-const StyledBannerContainer = styled.div`
-    position: relative;
-    width: 100%;
-    height: 50%;
-    margin-bottom: 24px;
-    /* overflow: hidden; */
-`;
-
-const StyledTitle = styled(Title)`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff !important;
-    font-weight: 700;
-    font-size: 32px;
-`;
-
-const StyledImage = styled(Image)`
-    width: 100%;
-    height: 275px;
-    object-fit: fill;
-    /* position: absolute; */
-`;
 
 const FormContainer = styled.div`
     display: flex;
@@ -86,10 +62,7 @@ const ContactForm = () => {
         <>
             <Row gutter={16}>
                 <Col flex={1} style={{width: '100%'}}>
-                    <StyledBannerContainer>
-                        <StyledImage src={Banner} preview={false} />
-                        <StyledTitle strong>Contatos</StyledTitle>
-                    </StyledBannerContainer>
+                    <BannerComponent src={Banner} title="Contatos" />
                 </Col>
             </Row>
             <Row gutter={[16, 16]} style={{paddingTop: 24}}>

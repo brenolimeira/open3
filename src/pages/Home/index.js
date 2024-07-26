@@ -2,20 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Image, theme, Col, Row, Typography, Card, Grid, Button, Form, Input } from "antd";
 import { LaptopOutlined, CheckOutlined } from '@ant-design/icons';
 import styled from "styled-components";
-import Banner from "../../assets/home.jpg";
+import Banner from "../../assets/home_ajustada.jpg";
+import BannerComponent from "../../components/BannerComponent";
 import axios from "axios";
 
 const { Title, Text } = Typography;
 
 const { useBreakpoint } = Grid;
-
-
-const StyledImage = styled(Image)`
-    width: 100%;
-    height: 275px;
-    object-fit: fill;
-    padding-bottom: 24px;
-`;
 
 const StyledDiv = styled.div`
     display: flex;
@@ -122,7 +115,7 @@ export default function HomePage() {
         <StyledDiv className="site-layout-content" style={{ background: colorBgContainer }}>
             <Row gutter={16}>
                 <Col flex={1} style={{ width: '100%' }}>
-                    <StyledImage src={Banner} preview={false} />
+                    <BannerComponent src={Banner} title="Suporte de TI para empresas" />
                 </Col>
             </Row>
 
