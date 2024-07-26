@@ -83,6 +83,19 @@ const type_suport = {
   ]
 }
 
+const StarRating = ({ count }) => {
+  const stars = Array.from({ length: count }, (_, index) => index);
+
+  return (
+    <Space size={4}>
+      {stars.map((_, index) => (
+        <StarFilled key={index} style={{ color: '#FFFF00', fontSize: 20 }} />
+      ))}
+    </Space>
+  );
+};
+
+
 export default function FooterPage() {
   const screens = useBreakpoint();
   const isMobile = !screens.md;
@@ -118,11 +131,7 @@ export default function FooterPage() {
                     <Space size="small">
                       <GoogleOutlined style={{fontSize: 20}} />
                       <Space size={4}>
-                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
-                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
-                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
-                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
-                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
+                        <StarRating count={5} />
                       </Space>
                     </Space>
                   </Space>
