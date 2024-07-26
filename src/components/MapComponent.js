@@ -25,7 +25,7 @@ const MapComponent = () => {
   const isMobile = !screens.md;
 
   return (
-    <MapContainer center={position} zoom={13} style={{ height: '400px', width: isMobile ? "95%" : "50%" }}>
+    <MapContainer center={position} zoom={13} style={{ height: '300px', width: isMobile ? "90%" : "50%" }}>
       <TileLayer
         url={`https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_ID}`}
         id="mapbox/dark-v10" 

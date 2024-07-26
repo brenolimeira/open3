@@ -110,7 +110,7 @@ export default function FooterPage() {
       >
         <Col flex={1} style={{width: "100%"}}>
           <Row gutter={[24,24]} style={{backgroundColor: "#2f2e2e", padding: isMobile ? "0.5em" : "5em"}}>
-            <Col span={6} >
+            <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
               <StyleContentText>
                 <Title level={4} style={{color: "#fff", fontWeight: 700}}>Contatos</Title>
                 <Space direction='vertical' size="middle">
@@ -148,7 +148,7 @@ export default function FooterPage() {
                 </Space>
               </StyleContentText>
             </Col>
-            <Col span={6}>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6}>
               <StyleContentText>
                 <Title level={4} style={{color: "#fff", fontWeight: 700}}>Institucional</Title>
                 <Space size="large" direction='vertical' align='start'>
@@ -160,7 +160,7 @@ export default function FooterPage() {
                 </Space>
               </StyleContentText>
             </Col>
-            <Col span={6} align='start'>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} align='start'>
               <StyleContentText>
                 <Title level={4} style={{color: "#fff", fontWeight: 700}}>Serviços TI</Title>
                 <Space size="middle" direction='vertical'>
@@ -172,7 +172,7 @@ export default function FooterPage() {
                 </Space>
               </StyleContentText>
             </Col>
-            <Col span={6}>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6}>
             <StyleContentText>
                 <Title level={4} style={{color: "#fff", fontWeight: 700}}>Atendimento</Title>
                 <Space size="middle" direction='vertical'>
