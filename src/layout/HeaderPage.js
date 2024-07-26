@@ -56,6 +56,7 @@ export function HeaderPage() {
     const list = [
         { label: 'Inicio', path: '/home', key: 1 },
         { label: 'Sobre', path: '/about', key: 2 },
+        { label: 'Contato', path: '/contact', key: 3 },
     ]
 
     const handleMenuClick = (item) => {

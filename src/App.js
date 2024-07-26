@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Layout, ConfigProvider } from 'antd';
 import Routes from './routes';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
