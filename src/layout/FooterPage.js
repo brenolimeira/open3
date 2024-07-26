@@ -1,6 +1,7 @@
 import { FacebookFilled, GoogleOutlined, InstagramFilled, LinkedinFilled, RightOutlined, StarFilled, TwitterSquareFilled, YoutubeFilled } from '@ant-design/icons';
 import { Col, Grid, Layout, Row, Space, Typography } from 'antd';
 import styled from 'styled-components';
+import StarRating from '../components/StarRating';
 
 const {  Footer } = Layout;
 const { Title, Text } = Typography;
@@ -82,19 +83,6 @@ const type_suport = {
     "Para Linux - OpenSuse"
   ]
 }
-
-const StarRating = ({ count }) => {
-  const stars = Array.from({ length: count }, (_, index) => index);
-
-  return (
-    <Space size={4}>
-      {stars.map((_, index) => (
-        <StarFilled key={index} style={{ color: '#FFFF00', fontSize: 20 }} />
-      ))}
-    </Space>
-  );
-};
-
 
 export default function FooterPage() {
   const screens = useBreakpoint();
