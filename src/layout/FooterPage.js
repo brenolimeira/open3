@@ -1,3 +1,4 @@
+import { FacebookFilled, GoogleOutlined, InstagramFilled, LinkedinFilled, RightOutlined, StarFilled, TwitterSquareFilled, YoutubeFilled } from '@ant-design/icons';
 import { Col, Grid, Layout, Row, Space, Typography } from 'antd';
 import styled from 'styled-components';
 
@@ -39,14 +40,48 @@ export default function FooterPage() {
                     <Text style={{color: "#fff", fontWeight: 700}} strong>Horário de atendimento: </Text>
                     <Text style={{color: "#fff"}}>Segunda à Sexta das 9h às 18h.</Text>
                   </Space>
+                  <Space direction='vertical' size={0}>
+                    <Text style={{color: "#fff", fontWeight: 700}} strong>Google Review</Text>
+                    <Space size="small">
+                      <GoogleOutlined style={{fontSize: 20}} />
+                      <Space size={4}>
+                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
+                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
+                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
+                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
+                        <StarFilled style={{color: '#FFFF00', fontSize: 20}} />
+                      </Space>
+                    </Space>
+                  </Space>
+                  <Space direction='vertical' size={0}>
+                    <Text style={{color: "#fff", fontWeight: 700}} strong>Redes sociais</Text>
+                    <Space size="small">
+                      <FacebookFilled style={{color: '#FFF', fontSize: 30}} />
+                      <LinkedinFilled style={{color: '#FFF', fontSize: 30}} />
+                      <YoutubeFilled style={{color: '#FFF', fontSize: 30}} />
+                      <InstagramFilled style={{color: '#FFF', fontSize: 30}} />
+                      <TwitterSquareFilled style={{color: '#FFF', fontSize: 30}} />
+                    </Space>
+                  </Space>
                 </Space>
               </StyleContentText>
             </Col>
             <Col span={6}>
               <Title level={4} style={{color: "#fff", fontWeight: 700}}>Institucional</Title>
+              <Space size="large" direction='vertical' align='start'>
+                <Text style={{color:'#fff'}}><RightOutlined /> Blog</Text>
+                <Text style={{color:'#fff'}}><RightOutlined /> Perguntas Frequentes</Text>
+                <Text style={{color:'#fff'}}><RightOutlined /> Politica de privacidade</Text>
+                <Text style={{color:'#fff'}}><RightOutlined /> Sobre nós</Text>
+                <Text style={{color:'#fff'}}><RightOutlined /> Trabalhe conosco</Text>
+              </Space>
             </Col>
             <Col span={6}>
               <Title level={4} style={{color: "#fff", fontWeight: 700}}>Serviços TI</Title>
+              <Space size="middle" direction='vertical' align='start'>
+                <Text style={{color: '#fff'}}><RightOutlined/> Assessoria de TI</Text>
+                <Text style={{color: '#fff'}}><RightOutlined/> Gestão de TI</Text>
+              </Space>
             </Col>
             <Col span={6}>
               <Title level={4} style={{color: "#fff", fontWeight: 700}}>Atendimento</Title>
