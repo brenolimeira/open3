@@ -44,6 +44,7 @@ export function HeaderPage() {
     const list = [
         { label: "Inicio", path: "/home", key: "home" },
         { label: "Sobre", path: "/about", key: "about" },
+        { label: "Serviços", path: "/services", key: "services" },
         { label: "Contato", path: "/contact", key: "contact" },
     ];
 
@@ -54,14 +55,14 @@ export function HeaderPage() {
 
     return (
         <StyledHeader>
-            <Row gutter={24} style={{width: '100%'}}>
-                <Col span={24} flex={1} style={{ display: "flex", alignItems: "center", justifyContent: 'center' }}>
+            <Row span={24} gutter={24} style={{width: '100%'}}>
+                <Col span={24} style={{ display: "flex", alignItems: "center", justifyContent: 'center' }}>
                     <Link to="/home">
                         <Image src={Logo} width={100} height={64} preview={false} />
                     </Link>
                     <StyledMenu
                         mode="horizontal"
-                        style={{ width: "15rem" }}
+                        style={{ width: isMobile ? "75%": "25%" }}
                         selected={selectedMenuItem}
                         selectedKeys={[selectedMenuItem && selectedMenuItem.toString()]}
                         onClick={handleMenuClick}
