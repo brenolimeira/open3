@@ -1,16 +1,28 @@
-import { Grid, Image, Layout, Menu } from 'antd';
+import { Grid, Image, Layout, Menu, Input } from 'antd';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { useTheme } from '../context/ThemeContext';
 import { useState } from 'react';
 import Logo from '../assets/open3.png'
 
-const { Header } = Layout;
 
+const { Header } = Layout; 
+const { Search } = Input;
 const { useBreakpoint } = Grid;
 
 const StyledHeader = styled(Header)`
     background-color: #2f2e2e;
+`
+
+const StyledSearch = styled(Search)`
+    .ant-input-wrapper .ant-btn {
+        background-color: #FF0000 !important;
+        background: #FF0000 !important;
+    }
+    .ant-input-wrapper .ant-btn:hover {
+        background-color: #f84000 !important;
+        background: #f84000 !important;
+    }
 `
 
 const StyledMasterContainerHeader = styled.div`
@@ -54,9 +66,9 @@ export function HeaderPage() {
     const isMobile = !screens.md;
 
     const list = [
-        { label: 'Inicio', path: '/home', key: 1 },
-        { label: 'Sobre', path: '/about', key: 2 },
-        { label: 'Contato', path: '/contact', key: 3 },
+        { label: 'Inicio', path: '/home', key: "home" },
+        { label: 'Sobre', path: '/about', key: "about" },
+        { label: 'Contato', path: '/contact', key: "contact" },
     ]
 
     const handleMenuClick = (item) => {
@@ -86,6 +98,7 @@ export function HeaderPage() {
                             ))}
                         </StyledMenu>
                     </MenuContainer>
+                    <StyledSearch placeholder="Pesquisar" size='middle' onSearch={onSearch} enterButton />
                 </StyledContainerHeader>
             </StyledMasterContainerHeader>
         </StyledHeader>
