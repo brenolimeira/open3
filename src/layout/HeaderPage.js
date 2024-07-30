@@ -1,9 +1,10 @@
-import { Grid, Image, Layout, Menu, Input, Col, Row } from "antd";
+import { Grid, Image, Layout, Menu, Input, Col, Row, Dropdown } from "antd";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { useTheme } from "../context/ThemeContext";
 import { useState } from "react";
 import Logo from "../assets/open3.png";
+import { DownOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
 const { Search } = Input;
@@ -44,7 +45,14 @@ export function HeaderPage() {
     const list = [
         { label: "Inicio", path: "/home", key: "home" },
         { label: "Sobre", path: "/about", key: "about" },
-        { label: "Serviços", path: "/services", key: "services" },
+        { label: "Serviços", path: "/services", key: "services",
+            submenu: [
+                { label: "Consultoria em TI", path: "/services/it_consultancy", key: "it_consultancy" },
+                { label: "Manutenção de Hardware", path: "/services/hardware_maintenance", key: "hardware_maintenance" },
+                { label: "Projetos de Redes", path: "/services/network_projects", key: "network_projects" },
+                { label: "Suporte de TI", path: "/services/it_support", key: "it_support" },
+            ]
+        },
         { label: "Contato", path: "/contact", key: "contact" },
     ];
 
@@ -52,6 +60,16 @@ export function HeaderPage() {
         setShowMenuVertical(false);
         setSelectedMenuItem(item.key);
     };
+
+    const servicesMenu = (
+        <Menu>
+            {list.find(item => item.key === "services").submenu.map(subitem => (
+                <Menu.Item key={subitem.key}>
+                    <NavLink to={subitem.path}>{subitem.label}</NavLink>
+                </Menu.Item>
+            ))}
+        </Menu>
+    );
 
     return (
         <StyledHeader>
@@ -67,11 +85,24 @@ export function HeaderPage() {
                         selectedKeys={[selectedMenuItem && selectedMenuItem.toString()]}
                         onClick={handleMenuClick}
                     >
-                        {list.map((item) => (
-                            <Menu.Item key={item.key} style={{ color: "white" }}>
-                                <NavLink to={item.path}>{item.label}</NavLink>
-                            </Menu.Item>
-                        ))}
+                        {list.map((item) => {
+                                if (item.key === "services") {
+                                    return (
+                                        <Menu.Item key={item.key} style={{ color: "white" }}>
+                                            <Dropdown overlay={servicesMenu} trigger={['hover']}>
+                                                <span>
+                                                    {item.label}
+                                                </span>
+                                            </Dropdown>
+                                        </Menu.Item>
+                                    );
+                                }
+                                return (
+                                    <Menu.Item key={item.key} style={{ color: "white" }}>
+                                        <NavLink to={item.path}>{item.label}</NavLink>
+                                    </Menu.Item>
+                                );
+                            })}
                     </StyledMenu>
                     <StyledSearch placeholder="Pesquisar" size="middle" onSearch={onSearch} enterButton style={{width: isMobile ? '40%' : '15%'}}/>
                 </Col>

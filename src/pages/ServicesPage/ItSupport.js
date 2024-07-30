@@ -1,20 +1,18 @@
 import React from 'react';
 import NewsletterComponent from '../../components/NewsletterComponent';
-import { Col, Row } from 'antd';
 import BannerComponent from '../../components/BannerComponent';
-import Banner from "../../assets/home_ajustada.jpg";
+import { Col, Row } from 'antd';
+import Banner from "../../assets/home_ajustada.jpg"
 
-function index() {
+export default function ItSupport(props) {
     return (
         <>
             <Row gutter={16}>
                 <Col flex={1} style={{ width: '100%' }}>
-                    <BannerComponent src={Banner} title="Sobre nós" />
+                    <BannerComponent src={Banner} title="Suporte de TI" />
                 </Col>
             </Row>
             <NewsletterComponent />
         </>
     );
 }
-
-export default index;

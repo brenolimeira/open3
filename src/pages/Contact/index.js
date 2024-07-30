@@ -74,16 +74,16 @@ const ContactForm = () => {
                                 <Text>Preencha o formulário abaixo e encaminhe sua solicitação.</Text>
                             </Form.Item>
                             <Form.Item name="name" rules={[{ required: true, message: "Por favor, insira seu nome." }]}>
-                                <Input placeholder="Nome*" />
+                                <Input placeholder="Nome*" style={{border: '1px solid #000'}}/>
                             </Form.Item>
                             <Form.Item name="email" rules={[{ required: true, message: "Por favor, insira seu e-mail." }]}>
-                                <Input placeholder="E-mail*" />
+                                <Input placeholder="E-mail*" style={{border: '1px solid #000'}}/>
                             </Form.Item>
                             <Form.Item name="phone" rules={[{ required: true, message: "Por favor, insira seu número de telefone." }]}>
-                                <Input placeholder="Telefone com DDD*" />
+                                <Input placeholder="Telefone com DDD*" style={{border: '1px solid #000'}}/>
                             </Form.Item>
                             <Form.Item name="message" rules={[{ required: true, message: "Por favor, insira os detalhes sobre sua solicitação." }]}>
-                                <Input.TextArea placeholder="Detalhes sobre sua solicitação*" />
+                                <Input.TextArea placeholder="Detalhes sobre sua solicitação*" style={{border: '1px solid #000'}}/>
                             </Form.Item>
                             <Form.Item style={{ textAlign: "end" }}>
                                 <Button htmlType="submit" loading={loading} style={{background: '#FF0000', color: '#fff'}}>
