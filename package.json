@@ -2,6 +2,7 @@
   "name": "open3",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://brenolimeira.github.io/open3",
   "dependencies": {
     "@ant-design/icons": "^5.4.0",
     "@craco/craco": "^7.1.0",
@@ -29,7 +30,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
   },
   "proxy": "https://docs.google.com",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "react-app-rewired": "^2.2.1"
