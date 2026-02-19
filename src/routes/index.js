@@ -15,6 +15,7 @@ export default function Routes() {
         <Router>
             <Route path='/' Component={HomePage} />
             <Route path='/home' Component={HomePage} />
+            <Route path='/open3' Component={HomePage} />
             <Route path='/about' Component={About} />
             <Route path='/services' Component={SevicesPage} />
             <Route path='/contact' Component={Contact} />
